@@ -2,13 +2,15 @@
 {% block title %}Tags{% endblock %}
 
 {% block content %}
-<h1>Tags</h1>
-<ul class="list-group">
-  {% for tag, articles in tags %}
-    <li class="list-group-item">
-      <a href="{{ SITEURL }}/tag/{{ tag.slug }}.html">{{ tag.name }}</a>
-      <span class="badge bg-secondary float-end">{{ articles|length }}</span>
-    </li>
-  {% endfor %}
-</ul>
+<div class="tags-page">
+  <h1>Tags</h1>
+  <ul class="list-group tags-list">
+    {% for tag, articles in tags %}
+      <li class="list-group-item">
+        <a href="{{ SITEURL }}/tag/{{ tag.slug }}.html">{{ tag.name }}</a>
+        <span class="badge">{{ articles|length }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
 {% endblock %}

@@ -3,11 +3,12 @@
 {% block title %}Veille Technologique{% endblock %}
 
 {% block content %}
-    <h1>Veille technologique</h1>
+        <div class="veille-page">
+            <h1>Veille technologique</h1>
 
       {{ page.content }}
 
-    <ul class="list-group">
+        <ul class="list-group veille-articles">
     {% for article in articles %}
         <li class="list-group-item">
             <h5><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h5>
@@ -16,4 +17,5 @@
         </li>
     {% endfor %}
     </ul>
+    </div>
 {% endblock %}

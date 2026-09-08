@@ -4,7 +4,8 @@
 
 {% block content %}
 
-  <!-- <h1>{{ page.title }}</h1> -->
-  {{ page.content }}
+  <div class="page-content{% if page.title == 'Réalisations' %} page-realisations{% elif page.title == 'Parcours' %} page-parcours{% endif %}">
+    {{ page.content }}
+  </div>
     
 {% endblock %}
