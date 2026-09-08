@@ -11,9 +11,11 @@
         <ul class="list-group veille-articles">
     {% for article in articles %}
         <li class="list-group-item">
-            <h5><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h5>
-            <p><small>{{ article.date.strftime('%d/%m/%Y') }} | Tags : {{ article.tags|join(', ') }}</small></p>
-            <p>{{ article.summary }}</p>
+            <a href="{{ SITEURL }}/{{ article.url }}">
+                <h5>{{ article.title }}</h5>
+                <p><small>{{ article.date.strftime('%d/%m/%Y') }} | Tags : {{ article.tags|join(', ') }}</small></p>
+                <p>{{ article.summary }}</p>
+            </a>
         </li>
     {% endfor %}
     </ul>

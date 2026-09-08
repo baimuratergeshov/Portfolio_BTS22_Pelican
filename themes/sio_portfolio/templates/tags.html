@@ -2,13 +2,15 @@
 {% block title %}Tags{% endblock %}
 
 {% block content %}
-<div class="tags-page">
+<div class="taxonomy-page">
   <h1>Tags</h1>
-  <ul class="list-group tags-list">
+  <ul class="list-group taxonomy-list">
     {% for tag, articles in tags %}
       <li class="list-group-item">
-        <a href="{{ SITEURL }}/tag/{{ tag.slug }}.html">{{ tag.name }}</a>
-        <span class="badge">{{ articles|length }}</span>
+        <a href="{{ SITEURL }}/tag/{{ tag.slug }}.html">
+          <span>{{ tag.name }}</span>
+          <span class="badge">{{ articles|length }}</span>
+        </a>
       </li>
     {% endfor %}
   </ul>

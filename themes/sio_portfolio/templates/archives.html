@@ -7,8 +7,10 @@
   <ul class="list-group archive-list">
     {% for article in articles %}
       <li class="list-group-item">
-        <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
-        <small>{{ article.date.strftime('%d/%m/%Y') }}</small>
+        <a href="{{ SITEURL }}/{{ article.url }}">
+          <span>{{ article.title }}</span>
+          <small>{{ article.date.strftime('%d/%m/%Y') }}</small>
+        </a>
       </li>
     {% endfor %}
   </ul>

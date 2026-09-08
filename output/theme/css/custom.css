@@ -320,7 +320,7 @@ Couleur des éléments de navigations :
 
 
 .veille-articles .list-group-item {
-    padding: 1.25rem 1.35rem;
+    padding: 0;
     border: 1px solid rgba(36, 41, 47, 0.12);
     border-left: 0.35rem solid #c62828;
     border-radius: 0.5rem;
@@ -349,7 +349,15 @@ Couleur des éléments de navigations :
 }
 
 
-.veille-articles h5 a:hover {
+.veille-articles .list-group-item > a {
+    display: block;
+    padding: 1.25rem 1.35rem;
+    color: inherit;
+    text-decoration: none;
+}
+
+
+.veille-articles .list-group-item > a:hover h5 {
     color: #c62828;
 }
 
@@ -366,7 +374,7 @@ Couleur des éléments de navigations :
 }
 
 
-.veille-articles h5 a:focus-visible {
+.veille-articles .list-group-item > a:focus-visible {
     outline: 3px solid var(--bs-warning);
     outline-offset: 3px;
 }
@@ -374,7 +382,8 @@ Couleur des éléments de navigations :
 
 /* Pages Archives et Tags */
 .archive-page,
-.tags-page {
+.author-page,
+.taxonomy-page {
     max-width: 62rem;
     margin: 0 auto;
     padding: clamp(1.5rem, 4vw, 3.5rem);
@@ -386,7 +395,8 @@ Couleur des éléments de navigations :
 
 
 .archive-page h1,
-.tags-page h1 {
+.author-page h1,
+.taxonomy-page h1 {
     margin-bottom: 2rem;
     color: #24292f;
     font-size: clamp(1.6rem, 3vw, 2.35rem);
@@ -396,7 +406,8 @@ Couleur des éléments de navigations :
 
 
 .archive-list,
-.tags-list {
+.author-list,
+.taxonomy-list {
     display: grid;
     gap: 1rem;
     margin: 0;
@@ -406,13 +417,9 @@ Couleur des éléments de navigations :
 
 
 .archive-list .list-group-item,
-.tags-list .list-group-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    min-height: 4.25rem;
-    padding: 1rem 1.25rem;
+.author-list .list-group-item,
+.taxonomy-list .list-group-item {
+    padding: 0;
     border: 1px solid rgba(36, 41, 47, 0.12);
     border-left: 0.35rem solid var(--bs-warning);
     border-radius: 0.5rem;
@@ -423,7 +430,8 @@ Couleur des éléments de navigations :
 
 
 .archive-list .list-group-item:hover,
-.tags-list .list-group-item:hover {
+.author-list .list-group-item:hover,
+.taxonomy-list .list-group-item:hover {
     transform: translateY(-3px);
     border-color: var(--bs-warning);
     box-shadow: 0 0.7rem 1.25rem rgba(36, 41, 47, 0.14);
@@ -431,7 +439,14 @@ Couleur des éléments de navigations :
 
 
 .archive-list a,
-.tags-list a {
+.author-list a,
+.taxonomy-list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 4.25rem;
+    padding: 1rem 1.25rem;
     color: #24292f;
     font-weight: 600;
     text-decoration: none;
@@ -439,13 +454,15 @@ Couleur des éléments de navigations :
 
 
 .archive-list a:hover,
-.tags-list a:hover {
+.author-list a:hover,
+.taxonomy-list a:hover {
     color: #c62828;
 }
 
 
 .archive-list a:focus-visible,
-.tags-list a:focus-visible {
+.author-list a:focus-visible,
+.taxonomy-list a:focus-visible {
     outline: 3px solid var(--bs-warning);
     outline-offset: 3px;
 }
@@ -457,12 +474,18 @@ Couleur des éléments de navigations :
 }
 
 
-.tags-list {
+.author-list small {
+    flex: 0 0 auto;
+    color: #6c757d;
+}
+
+
+.taxonomy-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 
-.tags-list .badge {
+.taxonomy-list .badge {
     flex: 0 0 auto;
     min-width: 2rem;
     padding: 0.4rem 0.55rem;
@@ -475,12 +498,19 @@ Couleur des éléments de navigations :
 
 
 @media (max-width: 575.98px) {
-    .tags-list {
+    .taxonomy-list {
         grid-template-columns: 1fr;
     }
 
     .archive-list .list-group-item,
-    .tags-list .list-group-item {
+    .author-list .list-group-item,
+    .taxonomy-list .list-group-item {
+        min-height: 0;
+    }
+
+    .archive-list a,
+    .author-list a,
+    .taxonomy-list a {
         align-items: flex-start;
         flex-direction: column;
     }

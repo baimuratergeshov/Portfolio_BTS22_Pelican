@@ -2,13 +2,17 @@
 {% block title %}Auteur : {{ author }}{% endblock %}
 
 {% block content %}
-<h1>Auteur : {{ author }}</h1>
-<ul class="list-group">
-  {% for article in articles %}
-    <li class="list-group-item">
-      <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
-      <br><small>{{ article.date.strftime('%d/%m/%Y') }}</small>
-    </li>
-  {% endfor %}
-</ul>
+<div class="author-page">
+  <h1>Auteur : {{ author }}</h1>
+  <ul class="list-group author-list">
+    {% for article in articles %}
+      <li class="list-group-item">
+        <a href="{{ SITEURL }}/{{ article.url }}">
+          <span>{{ article.title }}</span>
+          <small>{{ article.date.strftime('%d/%m/%Y') }}</small>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
 {% endblock %}
