@@ -9,6 +9,6 @@ from pelicanconf import *
 
 
 # If your site is available via HTTPS, make sure SITEURL begins with https://
-SITEURL = "https://ljules.github.io/Portfolio-SIO"
+SITEURL = "https://baimuratergeshov.github.io/Portfolio_BTS22_Pelican/"
 RELATIVE_URLS = False
 DELETE_OUTPUT_DIRECTORY = True
